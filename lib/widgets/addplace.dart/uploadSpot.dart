@@ -1,4 +1,6 @@
 // ignore: file_names
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +25,8 @@ class LocationSummary extends StatelessWidget {
     LocationController locationController = Get.put(LocationController());
     ImagePickerController imagePickerController =
         Get.put(ImagePickerController());
-   // AddSpotRepository userRepository = Get.put(AddSpotRepository());
-    //UserStateController userState = Get.put(UserStateController());
+    AddSpotRepository userRepository = Get.put(AddSpotRepository());
+    UserStateController userState = Get.put(UserStateController());
 
     return GetBuilder<AddPlaceController>(
         init: AddPlaceController(),
@@ -57,7 +59,7 @@ class LocationSummary extends StatelessWidget {
                         child: Icon(
                           Icons.check,
                           color: Constant.bgPrimary,
-                          size: 15.sp,
+                          size: 20.sp,
                         ),
                       ),
                     ),
@@ -70,7 +72,7 @@ class LocationSummary extends StatelessWidget {
                       text:
                           'Make Sure You are provided all the details about this spot. it will helps to earn more.',
                       color: Constant.bgRed,
-                      size: 12.sp,
+                      size: 14.sp,
                       maxLine: 5,
                       fontWeight: FontWeight.normal,
                     ),
@@ -104,7 +106,7 @@ class LocationSummary extends StatelessWidget {
                         child: Icon(
                           Icons.check,
                           color: Constant.bgPrimary,
-                          size: 15.sp,
+                          size: 20.sp,
                         ),
                       ),
                     ),
@@ -116,7 +118,7 @@ class LocationSummary extends StatelessWidget {
                     child: Constant.textWithStyle(
                       text: 'Make Sure provided details are correct.',
                       color: Constant.bgRed,
-                      size: 12.sp,
+                      size: 14.sp,
                       maxLine: 5,
                       fontWeight: FontWeight.normal,
                     ),
@@ -132,49 +134,38 @@ class LocationSummary extends StatelessWidget {
                   width: 80.w,
                   child: ElevatedButton(
                     onPressed: () async {
-                      // addPlaceController.isUploading = true;
-                      // String formattedDate = DateTime.now().toString();
-                      // if (imagePickerController.selectedMediaList.isNotEmpty &&
-                      //     addPlaceController.placeNameController.text != '') {
-                      //   final success = await userRepository.uploadImages(
-                      //       file: imagePickerController.selectedMediaList[0],
-                      //       id: userState.currentUser!.uid);
-
-                      //   if (success == '') {
-                      //     Utilis.snackBar(
-                      //         title: 'Error in file Uploading',
-                      //         message:
-                      //             'Please try again later. repeat same please contact us.');
-                      //     addPlaceController.isUploading = false;
-                      //   } else {
-                      //     final user = PostModel(
-                      //         latLng:
-                      //             '${locationController.latLng!.latitude},${locationController.latLng!.longitude}',
-                      //         placeName:
-                      //             addPlaceController.placeNameController.text,
-                      //         descName: addPlaceController.descController.text,
-                      //         landMark:
-                      //             addPlaceController.landMarkController.text,
-                      //         entranceTime: addPlaceController
-                      //             .entranceTimeController.text,
-                      //         visitCost: addPlaceController.costController.text,
-                      //         whatHave:
-                      //             addPlaceController.whatHaveController.text,
-                      //         bestTime:
-                      //             addPlaceController.bestTimeController.text,
-                      //         spotImage: success,
-                      //         addedDate: formattedDate);
-                      //     await userRepository.createPost(
-                      //         postModel: user, id: userState.currentUser!.uid);
-                      //     addPlaceController.isUploading = false;
-                      //   }
-                      // } else {
-                      //   Utilis.snackBar(
-                      //       title: 'Oops',
-                      //       message:
-                      //           'Please check you are provided all details.');
-                      // }
-                      // addPlaceController.isUploading = false;
+                      addPlaceController.isUploading = true;
+                      String formattedDate = DateTime.now().toString();
+                      if (addPlaceController.placeNameController.text != '') {
+                        final user = PostModel(
+                            // latLng:
+                            //     '${locationController.latLng!.latitude},${locationController.latLng!.longitude}',
+                             latLng:
+                                '${userState.currentUser?.displayName}',
+                            placeName:
+                                addPlaceController.placeNameController.text,
+                            descName: addPlaceController.descController.text,
+                            landMark:
+                                addPlaceController.landMarkController.text,
+                            entranceTime:
+                                addPlaceController.entranceTimeController.text,
+                            visitCost: addPlaceController.costController.text,
+                            whatHave:
+                                addPlaceController.whatHaveController.text,
+                            bestTime:
+                                addPlaceController.bestTimeController.text,
+                            spotImage: '',
+                            addedDate: formattedDate);
+                        await userRepository.createPost(
+                            postModel: user, id: userState.currentUser!.uid);
+                        addPlaceController.isUploading = false;
+                      } else {
+                        Utilis.snackBar(
+                            title: 'Oops',
+                            message:
+                                'Please check you are provided all details.');
+                      }
+                      addPlaceController.isUploading = false;
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Constant.bgGreen,
@@ -188,7 +179,7 @@ class LocationSummary extends StatelessWidget {
                             text: 'Upload Spot',
                             color: Constant.bgWhite,
                             fontWeight: FontWeight.normal,
-                            size: 12.sp,
+                            size: 14.sp,
                           ),
                   ),
                 )
@@ -208,7 +199,7 @@ class LocationSummary extends StatelessWidget {
                       text: 'Upload Spot',
                       color: Constant.bgWhite.withOpacity(.5),
                       fontWeight: FontWeight.normal,
-                      size: 12.sp,
+                      size: 14.sp,
                     ),
                   ),
                 ),

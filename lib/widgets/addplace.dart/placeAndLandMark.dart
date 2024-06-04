@@ -8,12 +8,13 @@ import 'package:spotrootweb/constant/constant.dart';
 class PlaceAndLAndMark extends StatelessWidget {
   final TextEditingController landMarkController;
   final TextEditingController placeNameController;
-    final TextEditingController descController;
+  final TextEditingController descController;
 
   const PlaceAndLAndMark(
       {super.key,
       required this.placeNameController,
-      required this.landMarkController,required this.descController});
+      required this.landMarkController,
+      required this.descController});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,9 @@ class PlaceAndLAndMark extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Constant.textWithStyle(
-          text: 'Brief the spot',
+          text: 'Add a spot',
           color: Constant.textPrimary,
-          size: 15.sp,
+          size: 20.sp,
           maxLine: 5,
           fontWeight: FontWeight.bold,
         ),
@@ -34,7 +35,7 @@ class PlaceAndLAndMark extends StatelessWidget {
         Constant.textWithStyle(
           text: 'Add effectevely will helps to reach more clicks.',
           color: Constant.textSecondary,
-          size: 12.sp,
+          size: 14.sp,
           maxLine: 5,
           fontWeight: FontWeight.normal,
         ),
@@ -46,7 +47,7 @@ class PlaceAndLAndMark extends StatelessWidget {
             maxLine: 1,
             height: 6,
             controller: placeNameController),
-                  SizedBox(
+        SizedBox(
           height: 1.h,
         ),
         getThefields(
@@ -69,7 +70,7 @@ class PlaceAndLAndMark extends StatelessWidget {
           text:
               'Please write a root map to the spot helps people get there if anyone get stuck. Written root map helps to find spot in out of network coverage area.',
           color: Constant.bgRed.withOpacity(.7),
-          size: 12.sp,
+          size: 14.sp,
           maxLine: 5,
           fontWeight: FontWeight.normal,
         ),
@@ -82,7 +83,7 @@ class PlaceAndLAndMark extends StatelessWidget {
               ' which is on the Purple Line. You can take a bus or taxi from the metro station to the park.'
               ' And the park is opposite side of the sundaran tea stall.',
           color: Constant.bgRed.withOpacity(.7),
-          size: 12.sp,
+          size: 14.sp,
           maxLine: 5,
           fontWeight: FontWeight.normal,
         ),
@@ -107,7 +108,6 @@ class PlaceAndLAndMark extends StatelessWidget {
           // border: Border.all(color: Constant.bgGreen, width: 1),
           borderRadius: BorderRadius.circular(10)),
       child: TextFormField(
-        
         controller: controller,
         cursorColor: Constant.textPrimary,
         maxLines: maxLine,
@@ -118,12 +118,12 @@ class PlaceAndLAndMark extends StatelessWidget {
             hintText: hintText,
             hintStyle: GoogleFonts.unbounded(
                 color: Constant.textSecondary.withOpacity(.5),
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 letterSpacing: 2,
                 fontWeight: FontWeight.normal)),
         style: GoogleFonts.unbounded(
             color: Constant.textPrimary,
-            fontSize: 12.sp,
+            fontSize: 14.sp,
             letterSpacing: 2,
             fontWeight: FontWeight.w500),
       ),

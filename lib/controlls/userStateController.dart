@@ -4,6 +4,10 @@ import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase;
 import 'package:spotrootweb/controlls/Exceptions.dart';
 import 'package:spotrootweb/services/firebaseAuthServices.dart';
+import 'package:spotrootweb/view/AuthScreens/loginScreen.dart';
+import 'package:spotrootweb/view/AuthScreens/signUpScreen.dart';
+import 'package:spotrootweb/view/addAPlace.dart';
+import 'package:spotrootweb/view/home_screen.dart';
 import 'package:spotrootweb/widgets/utilis.dart';
 
 class UserStateController extends GetxController {
@@ -116,14 +120,14 @@ class UserStateController extends GetxController {
     if (currentUser == null) {
       debugPrint('User is not logged In');
       isLoggedIn = false;
-    //  Get.offAll(() => const LoginScreen());
+     Get.offAll(() => const LoginScreen());
     } else {
       debugPrint('User is loggedIn : ${currentUser?.uid}');
       isLoggedIn = true;
       if (currentUser?.displayName == '' || currentUser?.displayName == null) {
-    //    Get.offAll(() => const SignUpScreen());
+       Get.offAll(() => const SignUpScreen());
       } else {
-       // Get.offAll(() => const LandingScreen());
+       Get.offAll(() => const AddAPlaceScreen());
       }
     }
     // ignore: unused_catch_clause
@@ -135,6 +139,6 @@ class UserStateController extends GetxController {
     verificationId = null;
     await FirebaseAuthentication.signOut();
     isLoggedIn = false;
-    //Get.offAll(() => const LoginScreen());
+    Get.offAll(() => const HomeScreen());
   }
 }

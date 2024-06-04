@@ -8,6 +8,7 @@ import 'package:spotrootweb/model/postModel.dart';
 import 'package:spotrootweb/view/StatusScreen.dart';
 import 'package:spotrootweb/widgets/utilis.dart';
 
+
 class AddSpotRepository extends GetxController {
   static AddSpotRepository get instance => Get.find();
 
@@ -15,7 +16,7 @@ class AddSpotRepository extends GetxController {
 
   createPost({required PostModel postModel, required String id}) async {
     await _db.collection(id).add(postModel.toJson()).then((res) {
-     Get.off(() => const StatusScreen());
+      Get.off(() => const StatusScreen());
     }).catchError((error, stackTrace) => Utilis.snackBar(
           title: 'Failed',
           message: 'Uploading spot is failed!',

@@ -118,26 +118,26 @@ class ImagePickerController extends GetxController {
               title: Constant.textWithStyle(
                   text: title,
                   maxLine: 3,
-                  size: 16.sp,
+                  size: 20.sp,
                   color: Constant.bgGreen,
                   fontWeight: FontWeight.w400),
               content: Constant.textWithStyle(
                   text: content,
                   maxLine: 3,
-                  size: 14.sp,
+                  size: 16.sp,
                   color: Constant.bgGreen,
                   fontWeight: FontWeight.normal),
               actions: <Widget>[
                 CupertinoDialogAction(
                   child: Constant.textWithStyle(
-                      text: 'Cancel', size: 15.sp, color: Constant.bgGreen),
+                      text: 'Cancel', size: 20.sp, color: Constant.bgGreen),
                   onPressed: () {
                     Get.back();
                   },
                 ),
                 CupertinoDialogAction(
                     child: Constant.textWithStyle(
-                        text: 'Settings', size: 15.sp, color: Constant.bgGreen),
+                        text: 'Settings', size: 20.sp, color: Constant.bgGreen),
                     onPressed: () => openAppSettings()),
               ],
             ));

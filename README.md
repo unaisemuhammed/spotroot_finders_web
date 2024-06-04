@@ -1,6 +1,6 @@
 # spotrootweb
 
-A new Flutter project.
+Spotroot Finder Web Application.
 
 ## Getting Started
 

@@ -26,12 +26,12 @@ class Utilis {
       title: Constant.textWithStyle(
           textAlign: TextAlign.center,
           text: title,
-          size: 16.sp,
+          size: 20.sp,
           fontWeight: FontWeight.w500,
           color: Constant.textPrimary),
       content: Constant.textWithStyle(
           text: description,
-          size: 14.sp,
+          size: 16.sp,
           fontWeight: FontWeight.normal,
           maxLine: 5,
           textAlign: TextAlign.center,
@@ -53,6 +53,7 @@ class Utilis {
   static snackBar(
       {required String title, required String message, bool failure = true}) {
     Get.snackbar('', '',
+        maxWidth: 80.w,
         titleText: Constant.textWithStyle(
           text: title,
           size: 16.sp,
@@ -83,7 +84,7 @@ class Utilis {
       child: Constant.textWithStyle(
         text: "Press again to exit",
         color: Constant.bgPrimary,
-        size: 14.sp,
+        size: 16.sp,
       ),
     ),
   );

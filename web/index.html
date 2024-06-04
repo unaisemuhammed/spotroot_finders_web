@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Spotroot Finder Web Application.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,9 +27,11 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 
-  <title>spotrootweb</title>
+
+  <title>spotrootfinderweb</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -38,6 +40,7 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbDZcLtovmd__RBu-kPS19dEsYszlJZOk"></script>
 </head>
 <body>
   <script>
@@ -65,13 +68,15 @@
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-      apiKey: "AIzaSyAjaYid4qalqFnu7KZ2LvMS-54aCVwom_o",
+      apiKey: "AIzaSyAjaYid4qalqFnu7KZ2LvMS-54aCVwom_o",  
       authDomain: "spotrootpartner.firebaseapp.com",
       projectId: "spotrootpartner",
       storageBucket: "spotrootpartner.appspot.com",
       messagingSenderId: "927646899468",
       appId: "1:927646899468:web:110a121c87ee0d565ffd29",
       measurementId: "G-LJJJL9V3T8"
+     , databaseURL:
+        'https://spotrootpartner-default-rtdb.firebaseio.com'
     };
   
     // Initialize Firebase

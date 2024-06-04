@@ -28,7 +28,7 @@ class EntryDetails extends StatelessWidget {
               Constant.textWithStyle(
                 text: 'Entrance Details',
                 color: Constant.textPrimary,
-                size: 15.sp,
+                size: 20.sp,
                 maxLine: 5,
                 fontWeight: FontWeight.bold,
               ),
@@ -38,7 +38,7 @@ class EntryDetails extends StatelessWidget {
               Constant.textWithStyle(
                 text: 'Entrance Details helps people to manage things.',
                 color: Constant.textSecondary,
-                size: 12.sp,
+                size: 14.sp,
                 maxLine: 5,
                 fontWeight: FontWeight.normal,
               ),
@@ -60,7 +60,7 @@ class EntryDetails extends StatelessWidget {
               //       child: Constant.textWithStyle(
               //           text: entry.selectedTime,
               //           color: Constant.textSecondary.withOpacity(.5),
-              //           size: 15.sp,
+              //           size: 20.sp,
               //           fontSpacing: 2,
               //           fontWeight: FontWeight.normal),
               //     ),
@@ -78,7 +78,7 @@ class EntryDetails extends StatelessWidget {
                 text:
                     'Please explain why the place is attractive?. What to see there?.',
                 color: Constant.bgRed.withOpacity(.7),
-                size: 12.sp,
+                size: 14.sp,
                 maxLine: 5,
                 fontWeight: FontWeight.normal,
               ),
@@ -96,7 +96,7 @@ class EntryDetails extends StatelessWidget {
               Constant.textWithStyle(
                 text: 'eg: Entrance fee, Additional accessories etc.',
                 color: Constant.bgRed.withOpacity(.7),
-                size: 12.sp,
+                size: 14.sp,
                 maxLine: 5,
                 fontWeight: FontWeight.normal,
               ),
@@ -108,7 +108,7 @@ class EntryDetails extends StatelessWidget {
         });
   }
 
-  getSheet({required String heading,required List data}) {
+  getSheet({required String heading, required List data}) {
     return Get.bottomSheet(
         enableDrag: false,
         isDismissible: true,
@@ -140,7 +140,7 @@ class EntryDetails extends StatelessWidget {
                           children: [
                             Constant.textWithStyle(
                               text: heading,
-                              size: 16.sp,
+                              size: 20.sp,
                               fontWeight: FontWeight.w500,
                               color: Constant.textPrimary,
                             ),
@@ -148,7 +148,7 @@ class EntryDetails extends StatelessWidget {
                               onTap: () {
                                 Get.back();
                               },
-                              child:const  Icon(
+                              child: const Icon(
                                 Icons.close,
                                 color: Constant.textPrimary,
                               ),
@@ -173,11 +173,10 @@ class EntryDetails extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Constant.textWithStyle(
-                                        text: data[index],
-                                        color: Constant.textPrimary,
-                                        size: 15.sp,
-                                        fontWeight: FontWeight.normal
-                                      ),
+                                          text: data[index],
+                                          color: Constant.textPrimary,
+                                          size: 20.sp,
+                                          fontWeight: FontWeight.normal),
                                     ],
                                   ),
                                 ),
@@ -215,12 +214,12 @@ class EntryDetails extends StatelessWidget {
             hintText: hintText,
             hintStyle: GoogleFonts.unbounded(
                 color: Constant.textSecondary.withOpacity(.5),
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 letterSpacing: 2,
                 fontWeight: FontWeight.normal)),
         style: GoogleFonts.unbounded(
             color: Constant.textPrimary,
-            fontSize: 12.sp,
+            fontSize: 14.sp,
             letterSpacing: 2,
             fontWeight: FontWeight.w500),
       ),

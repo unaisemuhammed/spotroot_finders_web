@@ -48,7 +48,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
           builder: (map) {
             if (map.currentPosition == null) {
               return Container(
-                padding:const  EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 height: 100.h,
                 width: 100.w,
                 color: Constant.bgPrimary,
@@ -65,7 +65,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                           text: 'Please wait fetching current location',
                           color: Constant.textSecondary,
                           fontWeight: FontWeight.w500,
-                          size: 15.sp,
+                          size: 20.sp,
                           textAlign: TextAlign.center,
                           maxLine: 5),
                       SizedBox(
@@ -78,7 +78,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                         fontWeight: FontWeight.normal,
                         textAlign: TextAlign.center,
                         maxLine: 5,
-                        size: 14.sp,
+                        size: 16.sp,
                       ),
                     ],
                   ),
@@ -186,7 +186,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                                   Constant.textWithStyle(
                                       text: map.localityName,
                                       fontWeight: FontWeight.w600,
-                                      size: 16.sp,
+                                      size: 20.sp,
                                       color: Constant.textPrimary),
                                   SizedBox(
                                     height: .5.h,
@@ -197,7 +197,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                                         text: map.localityAdress,
                                         maxLine: 3,
                                         fontWeight: FontWeight.normal,
-                                        size: 14.sp,
+                                        size: 16.sp,
                                         color: Constant.textSecondary),
                                   ),
                                   ElevatedButton(
@@ -213,7 +213,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                                                 BorderRadius.circular(10))),
                                     child: Constant.textWithStyle(
                                       text: 'Confirm & Continue',
-                                      size: 15.sp,
+                                      size: 20.sp,
                                       color: Constant.bgWhite,
                                       fontWeight: FontWeight.w500,
                                     ),

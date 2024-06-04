@@ -23,10 +23,11 @@ class FirebaseAuthentication extends GetxController {
 
   static verifyPhoneNumber(String? phoneNumber, codeSent, verifyErr,
       {int? resendToken}) async {
-    await FirebaseAuth.instance.verifyPhoneNumber(
+        FirebaseAuth auth =FirebaseAuth.instance;
+    await auth.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         verificationCompleted: (PhoneAuthCredential credential) async {
-          await FirebaseAuth.instance.signInWithCredential(credential);
+          await auth.signInWithCredential(credential);
         },
         verificationFailed: verifyErr,
         codeSent: (String verificationId, int? resendToken) {
@@ -42,11 +43,14 @@ class FirebaseAuthentication extends GetxController {
     // Create a PhoneAuthCredential with the code
 
     // Sign the user in (or link) with the credential
+            FirebaseAuth auth =FirebaseAuth.instance;
+
     try {
+      
       PhoneAuthCredential credential = PhoneAuthProvider.credential(
           verificationId: verificationId, smsCode: smsCode);
       UserCredential userCredential =
-          await FirebaseAuth.instance.signInWithCredential(credential);
+          await auth.signInWithCredential(credential);
       bool isNewUSer = userCredential.additionalUserInfo!.isNewUser;
       String? userName = userCredential.additionalUserInfo!.username;
       String? authCode = userCredential.additionalUserInfo!.authorizationCode;

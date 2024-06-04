@@ -24,7 +24,7 @@ class AddImages extends StatelessWidget {
         Constant.textWithStyle(
           text: 'Add Spot Images',
           color: Constant.textPrimary,
-          size: 15.sp,
+          size: 20.sp,
           maxLine: 5,
           fontWeight: FontWeight.bold,
         ),
@@ -34,7 +34,7 @@ class AddImages extends StatelessWidget {
         Constant.textWithStyle(
           text: 'Add effectevely will helps to reach more clicks.',
           color: Constant.textSecondary,
-          size: 12.sp,
+          size: 14.sp,
           maxLine: 5,
           fontWeight: FontWeight.normal,
         ),
@@ -75,7 +75,7 @@ class AddImages extends StatelessWidget {
           text:
               'Now we have only an option to upload a single photo. Next version you can upload multiple photo and videos.',
           color: Constant.bgRed.withOpacity(.7),
-          size: 12.sp,
+          size: 14.sp,
           maxLine: 5,
           fontWeight: FontWeight.normal,
         ),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -89,6 +88,8 @@ class LocationController extends GetxController {
   }
 
   Future<void> getCurrentPosition() async {
+    debugPrint('isCAAAAAAAAAAAAAAAAAAALLLing');
+
     final hasPermission = await handleLocationPermission();
     if (!hasPermission) return;
     await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high)

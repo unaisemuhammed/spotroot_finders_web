@@ -26,7 +26,7 @@ class AddLocation extends StatelessWidget {
               Constant.textWithStyle(
                 text: 'Add a spot',
                 color: Constant.textPrimary,
-                size: 15.sp,
+                size: 20.sp,
                 maxLine: 5,
                 fontWeight: FontWeight.bold,
               ),
@@ -38,7 +38,7 @@ class AddLocation extends StatelessWidget {
                 text:
                     'Try to get people there!. we should know the location of the spot you found.',
                 color: Constant.textSecondary,
-                size: 12.sp,
+                size: 14.sp,
                 maxLine: 5,
                 fontWeight: FontWeight.normal,
               ),
@@ -58,12 +58,12 @@ class AddLocation extends StatelessWidget {
                           text: loc.currentAddress,
                           maxLine: 10,
                           fontWeight: FontWeight.normal,
-                          size: 12.sp,
+                          size: 14.sp,
                           color: Constant.bgRed),
                     ),
                   ],
                 ),
-                SizedBox(
+              SizedBox(
                 height: 3.h,
               ),
               SizedBox(
@@ -96,7 +96,7 @@ class AddLocation extends StatelessWidget {
                           text: 'Select location',
                           color: Constant.bgWhite,
                           fontWeight: FontWeight.normal,
-                          size: 12.sp,
+                          size: 14.sp,
                         ),
                 ),
               ),

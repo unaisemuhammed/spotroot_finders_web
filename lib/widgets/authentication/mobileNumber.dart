@@ -29,7 +29,7 @@ class MobileNumber extends StatelessWidget {
           height: 6.h,
           width: 100.w,
           decoration: BoxDecoration(
-              color: Constant.bgSecondary,
+              color: Constant.bgPrimary,
               // border: Border.all(color: Constant.bgGreen, width: 1),
               borderRadius: BorderRadius.circular(10)),
           child: TextFormField(
@@ -49,12 +49,12 @@ class MobileNumber extends StatelessWidget {
                 hintText: 'Mobile Number',
                 hintStyle: GoogleFonts.unbounded(
                     color: Constant.textSecondary.withOpacity(.5),
-                    fontSize: 15.sp,
+                    fontSize: 14.sp,
                     letterSpacing: 2,
                     fontWeight: FontWeight.normal)),
             style: GoogleFonts.unbounded(
                 color: Constant.textPrimary,
-                fontSize: 15.sp,
+                fontSize: 14.sp,
                 letterSpacing: 2,
                 fontWeight: FontWeight.w500),
           ),
@@ -63,8 +63,8 @@ class MobileNumber extends StatelessWidget {
           height: 1.h,
         ),
         SizedBox(
-          height: 5.h,
-          width: 100.w,
+          height: 6.h,
+          width: 80.w,
           child: GetBuilder<MutationControlls>(
               init: MutationControlls(),
               builder: (mutationController) {
@@ -116,7 +116,9 @@ class MobileNumber extends StatelessWidget {
                 );
               }),
         ),
-        SizedBox(height: 3.h,),
+        SizedBox(
+          height: 3.h,
+        ),
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
@@ -139,8 +141,8 @@ class MobileNumber extends StatelessWidget {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () async {
-                      launchUrl(
-                          Uri.parse("https://www.termsfeed.com/live/735123db-4769-4f54-8f1d-8303933ea329"));
+                      launchUrl(Uri.parse(
+                          "https://www.termsfeed.com/live/735123db-4769-4f54-8f1d-8303933ea329"));
                     }),
               TextSpan(
                 text: ' and',
@@ -159,8 +161,8 @@ class MobileNumber extends StatelessWidget {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () async {
-                      launchUrl(
-                          Uri.parse("https://www.termsfeed.com/live/735123db-4769-4f54-8f1d-8303933ea329"));
+                      launchUrl(Uri.parse(
+                          "https://www.termsfeed.com/live/735123db-4769-4f54-8f1d-8303933ea329"));
                     }),
             ],
           ),

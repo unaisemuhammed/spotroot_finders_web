@@ -1,17 +1,24 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spotrootweb/services/locator.dart';
-import 'package:spotrootweb/view/Home_Screen.dart';
+import 'package:spotrootweb/view/AuthScreens/loginScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:spotrootweb/view/home_screen.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp(
-    
-  // );
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: const FirebaseOptions(
+    apiKey: "AIzaSyAjaYid4qalqFnu7KZ2LvMS-54aCVwom_o",
+    appId: "1:927646899468:web:110a121c87ee0d565ffd29",
+    messagingSenderId: "927646899468",
+    databaseURL:
+        'https://spotrootpartner-default-rtdb.firebaseio.com', // IMPORTANT!
+    projectId: "spotrootpartner",
+  ));
+  serviceLocator();
   runApp(const MyApp());
-  //serviceLocator();
 }
 
 class MyApp extends StatelessWidget {

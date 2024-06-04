@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,7 +25,7 @@ class Otp extends StatelessWidget {
           height: 6.h,
           width: 100.w,
           decoration: BoxDecoration(
-            color: Constant.bgSecondary,
+              color: Constant.bgPrimary,
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
@@ -43,13 +42,13 @@ class Otp extends StatelessWidget {
               hintText: 'Code here',
               hintStyle: GoogleFonts.unbounded(
                   color: Constant.textSecondary.withOpacity(.5),
-                  fontSize: 15.sp,
+                  fontSize: 14.sp,
                   letterSpacing: 2,
                   fontWeight: FontWeight.normal),
             ),
             style: GoogleFonts.unbounded(
                 color: Constant.textPrimary,
-                fontSize: 15.sp,
+                fontSize: 14.sp,
                 letterSpacing: 5,
                 fontWeight: FontWeight.w500),
           ),
@@ -58,8 +57,8 @@ class Otp extends StatelessWidget {
           height: 1.h,
         ),
         SizedBox(
-          height: 5.h,
-          width: 100.w,
+          height: 6.h,
+          width: 80.w,
           child: ElevatedButton(
             onPressed: () async {
               if (otpController.text.isNotEmpty) {
